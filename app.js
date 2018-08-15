@@ -1,12 +1,32 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 
+const config = require('./config/config');
+const passportModel = require('./models/passport');
 const auth = require('./routes/auth');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(session({
+  secret: config.session.secret,
+  resave: config.session.resave,
+  saveUninitialized: config.session.saveUninitialized,
+  store: new MySQLStore({
+    host: config.mysql.host,
+    port: config.mysql.port,
+    user: config.mysql.user,
+    password: config.mysql.password,
+    database: config.mysql.database,
+  }),
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passportModel();
 app.use('/auth/', auth);
 
 module.exports = app;
