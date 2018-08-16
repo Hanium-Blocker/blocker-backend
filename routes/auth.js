@@ -39,12 +39,11 @@ router.post('/register', (req, res) => {
           auth_id: req.body.auth_id,
           password: hash,
           salt: _salt,
-          username: req.body.username,
-          gender_id: req.body.gender_id,
+          name: req.body.name,
+          gender: req.body.gender,
           birth: req.body.birth,
           tel: req.body.tel,
-          region_id: req.body.region_id,
-          admin_state: req.body.admin_state,
+          region: req.body.region_id,
         };
         const sql = 'INSERT INTO users SET ?';
         conn.query(sql, user, (err) => {
