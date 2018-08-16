@@ -30,7 +30,7 @@ router.post('/register', (req, res) => {
       console.log(err);
       res.status(500).json(config.status.sc500);
     }
-    if (results.length > 0) {
+    if (results[0].count > 0) {
       console.log('Duplicate user !');
       res.status(409).json(config.status.sc409);
     } else {
