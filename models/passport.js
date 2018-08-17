@@ -28,13 +28,16 @@ module.exports = () => {
     passwordField: 'password',
     session: true,
     passReqToCallback: false,
-  }, ((authId, password, done) => {
+  }, (auth_id, password, done) => {
     const sql = 'SELECT * FROM users WHERE auth_id=?';
-    conn.query(sql, [authId], (err, results) => {
-      if (err || results.length === 0) {
+    conn.query(sql, [auth_id], (err, results) => {
+      if (err) {
         return done('There is no user.');
       }
-      return hasher({ password, salt: results[0].salt }, (err, pass, salt, hash) => {
+      if (results.length === 0) {
+        return done('There is no user.');
+      }
+      return hasher({ password: password, salt: results[0].salt }, (err, pass, salt, hash) => {
         if (hash === results[0].password) {
           done(null, results[0]);
         } else {
@@ -43,5 +46,5 @@ module.exports = () => {
         }
       });
     });
-  })));
+  }));
 };

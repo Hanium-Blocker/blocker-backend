@@ -12,14 +12,18 @@ router.post(
   passport.authenticate(
     'local',
     {
-      successRedirect: '/info/candidate',
+      successRedirect: '/auth/login/success',
       failureRedirect: '/auth/login/fail',
       failureFlash: false,
     },
   ),
 );
 
-router.post('/login/fail', (req, res) => {
+router.get('/login/success', (req, res) => {
+  res.status(200).json(config.status.sc200);
+});
+
+router.get('/login/fail', (req, res) => {
   res.status(403).json(config.status.sc403);
 });
 
