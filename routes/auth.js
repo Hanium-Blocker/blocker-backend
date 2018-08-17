@@ -43,7 +43,7 @@ router.post('/register', (req, res) => {
           gender: req.body.gender,
           birth: req.body.birth,
           tel: req.body.tel,
-          region: req.body.region_id,
+          region: req.body.region,
         };
         const sql = 'INSERT INTO users SET ?';
         conn.query(sql, user, (err) => {
