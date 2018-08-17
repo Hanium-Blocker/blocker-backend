@@ -24,7 +24,7 @@ router.get('/login/success', (req, res) => {
 });
 
 router.get('/login/fail', (req, res) => {
-  res.status(403).json(config.status.sc403);
+  res.status(200).json(config.status.sc403);
 });
 
 router.post('/register', (req, res) => {
@@ -36,7 +36,7 @@ router.post('/register', (req, res) => {
     }
     if (results[0].count > 0) {
       console.log('Duplicate user !');
-      res.status(409).json(config.status.sc409);
+      res.status(200).json(config.status.sc409);
     } else {
       hasher({ password: req.body.password }, (err, pass, _salt, hash) => {
         const user = {
