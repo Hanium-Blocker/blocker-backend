@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bkfd2Password = require('pbkdf2-password');
-
 const passport = require('passport');
+
 const conn = require('../models/mysql');
 const config = require('../config/config');
 
