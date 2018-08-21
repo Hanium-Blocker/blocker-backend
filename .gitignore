@@ -1,4 +1,4 @@
-config/config.js
+config/config
 logs
 *.log
 npm-debug.log*
