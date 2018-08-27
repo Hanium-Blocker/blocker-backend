@@ -7,17 +7,13 @@ const config = require('../config/config');
 
 const hasher = bkfd2Password();
 
-router.post(
-  '/login',
-  passport.authenticate(
-    'local',
-    {
-      successRedirect: '/auth/login/success',
-      failureRedirect: '/auth/login/fail',
-      failureFlash: false,
-    },
-  ),
-);
+router.post('/login', passport.authenticate('local'), (req, res) => {
+  if (req.user.auth_id === 'admin') {
+    res.status(200).json(config.status.scAdmin);
+  } else {
+    res.status(200).json(config.status.scGuest);
+  }
+});
 
 router.get('/login/success', (req, res) => {
   res.status(200).json(config.status.sc200);
@@ -48,6 +44,7 @@ router.post('/register', (req, res) => {
           birth: req.body.birth,
           tel: req.body.tel,
           region: req.body.region,
+          admin_state: 0,
         };
         const sql = 'INSERT INTO users SET ?';
         conn.query(sql, user, (err) => {
