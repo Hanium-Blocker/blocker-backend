@@ -9,8 +9,10 @@ const hasher = bkfd2Password();
 
 router.post('/login', passport.authenticate('local'), (req, res) => {
   if (req.user.auth_id === 'admin') {
+    console.log('Login as admin id');
     res.status(200).json(config.status.scAdmin);
   } else {
+    console.log('Login as guest id');
     res.status(200).json(config.status.scGuest);
   }
 });
