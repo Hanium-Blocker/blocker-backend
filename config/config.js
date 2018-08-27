@@ -16,6 +16,14 @@ module.exports = {
     saveUninitialized: 'true',
   },
   status: {
+    scAdmin: {
+      code: 200,
+      message: 'ADMIN',
+    },
+    scGuest: {
+      code: 200,
+      message: 'GUEST',
+    },
     sc200: {
       code: 200,
       message: 'OK',
