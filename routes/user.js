@@ -163,4 +163,17 @@ router.put('/election/:electionId/candidate/:number', (req, res) => {
   });
 });
 
+router.delete('/election/:electionId/candidate/:number', (req, res) => {
+  const sql = 'DELETE FROM candidates WHERE election_id=? AND number=?';
+  conn.query(sql, [req.params.electionId, req.params.number], (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json(config.status.sc500);
+    } else {
+      console.log(`Delete ${req.params.electionId}'s number ${req.params.number} a single candidate !`);
+      res.status(200).json(config.status.sc200);
+    }
+  });
+});
+
 module.exports = router;
