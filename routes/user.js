@@ -59,7 +59,7 @@ router.put('/election/:electionId', (req, res) => {
           console.log(err);
           res.status(500).json(config.status.sc500);
         } else {
-          console.log('Update a single election !');
+          console.log(`Update ${req.params.electionId}'s a single election !`);
           res.status(200).json(config.status.sc200);
         }
       });
@@ -74,7 +74,7 @@ router.delete('/election/:electionId', (req, res) => {
       console.log(err);
       res.status(500).json(config.status.sc500);
     } else {
-      console.log('Delete a single election !');
+      console.log(`Delete ${req.params.electionId}'s a single election !`);
       res.status(200).json(config.status.sc200);
     }
   });
