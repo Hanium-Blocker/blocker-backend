@@ -93,4 +93,37 @@ router.get('/election/:electionId/candidate', (req, res) => {
   });
 });
 
+router.post('/election/:electionId/candidate', (req, res) => {
+  const sql = 'SELECT COUNT(*) count FROM candidates WHERE election_id=? AND number=?';
+  conn.query(sql, [req.params.electionId, req.body.number], (err, results) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json(config.status.sc500);
+    } else if (results[0].count > 0) {
+      console.log('Duplicate candidate !');
+      res.status(200).json(config.status.sc409);
+    } else {
+      const result = {
+        election_id: req.params.electionId,
+        number: req.body.number,
+        name: req.body.name,
+        party: req.body.party,
+        birth: req.body.birth,
+        gender: req.body.gender,
+        campaign_link: req.body.campaign_link,
+      };
+      const sql = 'INSERT INTO candidates SET ?';
+      conn.query(sql, result, (err) => {
+        if (err) {
+          console.log(err);
+          res.status(500).json(config.status.sc500);
+        } else {
+          console.log(`Add ${req.params.electionId}'s a single candidate !`);
+          res.status(200).json(config.status.sc200);
+        }
+      });
+    }
+  });
+});
+
 module.exports = router;
