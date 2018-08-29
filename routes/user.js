@@ -126,4 +126,17 @@ router.post('/election/:electionId/candidate', (req, res) => {
   });
 });
 
+router.get('/election/:electionId/candidate/:number', (req, res) => {
+  const sql = 'SELECT * FROM candidates WHERE election_id=? AND number=?';
+  conn.query(sql, [req.params.electionId, req.params.number], (err, results) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json(config.status.sc500);
+    } else {
+      console.log(`Response ${req.params.electionId}'s number ${req.params.number} a single candidate !`);
+      res.json(results[0]);
+    }
+  });
+});
+
 module.exports = router;
