@@ -139,4 +139,28 @@ router.get('/election/:electionId/candidate/:number', (req, res) => {
   });
 });
 
+router.put('/election/:electionId/candidate/:number', (req, res) => {
+  const sql = 'SELECT COUNT(*) count FROM candidates WHERE election_id=? AND number=?';
+  conn.query(sql, [req.params.electionId, req.body.number], (err, results) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json(config.status.sc500);
+    } else if (results[0].count > 0 && (parseInt(req.params.number, 10) !== req.body.number)) {
+      console.log('Duplicate candidate !');
+      res.status(200).json(config.status.sc409);
+    } else {
+      const sql = 'UPDATE candidates SET number=?, name=?, party=?, birth=?, gender=?, campaign_link=? WHERE election_id=? AND number=?';
+      conn.query(sql, [req.body.number, req.body.name, req.body.party, req.body.birth, req.body.gender, req.body.campaign_link, req.params.electionId, req.params.number], (err) => {
+        if (err) {
+          console.log(err);
+          res.status(500).json(config.status.sc500);
+        } else {
+          console.log(`Update ${req.params.electionId}'s number ${req.params.number} a single candidate !`);
+          res.status(200).json(config.status.sc200);
+        }
+      });
+    }
+  });
+});
+
 module.exports = router;
