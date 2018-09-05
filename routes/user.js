@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const conn = require('../models/mysql');
 const config = require('../config/config');
+const upload = require('../models/upload');
 
 router.get('/election', (req, res) => {
   const sql = 'SELECT * FROM elections';
@@ -93,7 +94,7 @@ router.get('/election/:electionId/candidate', (req, res) => {
   });
 });
 
-router.post('/election/:electionId/candidate', (req, res) => {
+router.post('/election/:electionId/candidate', upload.single('image_file'), (req, res) => {
   const sql = 'SELECT COUNT(*) count FROM candidates WHERE election_id=? AND number=?';
   conn.query(sql, [req.params.electionId, req.body.number], (err, results) => {
     if (err) {
@@ -111,6 +112,7 @@ router.post('/election/:electionId/candidate', (req, res) => {
         birth: req.body.birth,
         gender: req.body.gender,
         campaign_link: req.body.campaign_link,
+        image_file: config.aws.src + req.file.filename + '.png',
       };
       const sql = 'INSERT INTO candidates SET ?';
       conn.query(sql, result, (err) => {
@@ -139,7 +141,7 @@ router.get('/election/:electionId/candidate/:number', (req, res) => {
   });
 });
 
-router.put('/election/:electionId/candidate/:number', (req, res) => {
+router.put('/election/:electionId/candidate/:number', upload.single('image_file'), (req, res) => {
   const sql = 'SELECT COUNT(*) count FROM candidates WHERE election_id=? AND number=?';
   conn.query(sql, [req.params.electionId, req.body.number], (err, results) => {
     if (err) {
@@ -149,8 +151,9 @@ router.put('/election/:electionId/candidate/:number', (req, res) => {
       console.log('Duplicate candidate !');
       res.status(200).json(config.status.sc409);
     } else {
-      const sql = 'UPDATE candidates SET number=?, name=?, party=?, birth=?, gender=?, campaign_link=? WHERE election_id=? AND number=?';
-      conn.query(sql, [req.body.number, req.body.name, req.body.party, req.body.birth, req.body.gender, req.body.campaign_link, req.params.electionId, req.params.number], (err) => {
+      const sql = 'UPDATE candidates SET number=?, name=?, party=?, birth=?, gender=?, campaign_link=?, image_file=? WHERE election_id=? AND number=?';
+      const src = config.aws.src + req.file.filename + '.png';
+      conn.query(sql, [req.body.number, req.body.name, req.body.party, req.body.birth, req.body.gender, req.body.campaign_link, src, req.params.electionId, req.params.number], (err) => {
         if (err) {
           console.log(err);
           res.status(500).json(config.status.sc500);
