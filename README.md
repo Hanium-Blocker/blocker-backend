@@ -12,6 +12,8 @@
   - 이더리움 기반 플랫폼을 구성하고 투표권자에게 Token을 발행
   - 인증된 투표권자는 블록체인 플랫폼 상에서 투표를 진행함
   - 후보자 정보를 확인할 수 있고 및 투표결과도 실시간으로 공개
+- 기간
+  - 2018.04.24 ~ 2018.11.30
 - 참고 링크
   - [blocker API Document](https://github.com/Hanium-Blocker/blocker-backend/wiki/Blocker-API-Document)
   - [blocker Database Structure](https://github.com/Hanium-Blocker/blocker-backend/wiki/Blocker-Database-Structure)
