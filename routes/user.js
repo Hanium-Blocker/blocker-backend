@@ -164,7 +164,7 @@ router.put('/election/:electionId/candidate/:number', (req, res) => {
   });
 });
 
-router.put('/election/:electionId/candidate/:number/:name', (req, res) => {
+router.put('/election/:electionId/candidate/:number/:name', upload.single('image_file'), (req, res) => {
   const sql = 'SELECT COUNT(*) count FROM candidates WHERE election_id=? AND number=?';
   conn.query(sql, [req.params.electionId, req.body.number], (err, results) => {
     if (err) {
@@ -175,9 +175,8 @@ router.put('/election/:electionId/candidate/:number/:name', (req, res) => {
       res.status(200).json(config.status.sc409);
     } else {
       const sql = 'UPDATE candidates SET image_file=? WHERE election_id=? AND number=?';
-      req.file.originalname = req.params.electionId + req.params.name + req.params.number;
-      upload.single('image_file');
-      const src = config.aws.src + req.file.originalname + '.png';
+      console.log(req.file);
+      const src = config.aws.src + req.params.electionId + req.params.name + req.params.number + '.png';
       conn.query(sql, [src, req.params.electionId, req.params.number], (err) => {
         if (err) {
           console.log(err);
