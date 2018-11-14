@@ -37,12 +37,12 @@
   - [blocker-eth](https://github.com/Hanium-Blocker/blocker_eth)
 
 ## Preview
-| ![1](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/1.png) | ![2](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/2.png) | ![2-1](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/2-1.png) | ![2-2](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/2-2.png) | ![3](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/3.png) |
+| ![1](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/1.png) | ![2](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/2.png) | ![2-1](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/2-1.png) | ![2-2](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/2-2.png) | ![3](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/3.png) |
 |:---:|:---:|:---:|:---:|:---:|
-| ![4](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/4.png) | ![5](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/5.png) | ![6](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/6.png) | ![7](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/7.png) | ![8](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/8.png) |
-| ![8-1](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/8-1.png) | ![8-2](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/8-2.png) | ![8-3](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/8-3.png) | ![8-4](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/8-4.png) | ![8-5](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/8-5.png) |
-| ![9](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/9.png) | ![10](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/10.png) | ![11](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/11.png) | ![12](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/12.png) | ![13](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/13.png) |
-| ![14](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/14.png) | ![15](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/readmeImage/15.png) ||||
+| ![4](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/4.png) | ![5](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/5.png) | ![6](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/6.png) | ![7](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/7.png) | ![8](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/8.png) |
+| ![8-1](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/8-1.png) | ![8-2](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/8-2.png) | ![8-3](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/8-3.png) | ![8-4](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/8-4.png) | ![8-5](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/8-5.png) |
+| ![9](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/9.png) | ![10](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/10.png) | ![11](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/11.png) | ![12](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/12.png) | ![13](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/13.png) |
+| ![14](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/14.png) | ![15](https://github.com/Hanium-Blocker/blocker_android/tree/dev/readmeImage/15.png) ||||
 
 ## Preview_ video
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/KF16BYdMv58/0.jpg)](http://www.youtube.com/watch?v=KF16BYdMv58 )
@@ -50,4 +50,4 @@
 ### 팀원 소개
 - Mentor: 홍민표
 - Mentee : 김주현, 조현우, 최준영
-![image](![image](https://user-images.githubusercontent.com/36880294/48470468-d9833c00-e834-11e8-92b5-ad30bca47cf5.png))
+![image](https://user-images.githubusercontent.com/36880294/48470679-6a5a1780-e835-11e8-856c-2b8a3dc7cd81.png)
